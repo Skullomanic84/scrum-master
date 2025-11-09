@@ -5,16 +5,19 @@ This directory contains all the test files for the Scrum Master application.
 ## Running Tests
 
 ### Run all tests
+
 ```bash
 npm test
 ```
 
 ### Run tests in watch mode
+
 ```bash
 npm run test:watch
 ```
 
 ### Generate coverage report
+
 ```bash
 npm run test:coverage
 ```
@@ -32,6 +35,7 @@ __tests__/
 ## Writing Tests
 
 ### Example Test Structure
+
 ```javascript
 import { describe, it, expect } from '@jest/globals';
 
@@ -39,10 +43,10 @@ describe('Feature Name', () => {
   it('should do something', () => {
     // Arrange
     const input = 'test';
-    
+
     // Act
     const result = someFunction(input);
-    
+
     // Assert
     expect(result).toBe('expected');
   });

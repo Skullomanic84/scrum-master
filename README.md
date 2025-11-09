@@ -47,9 +47,15 @@ A project management application built with Node.js, Express, and MongoDB, follo
 
 ## Development
 
-- Run tests: `npm test`
-- Format code: `npx prettier --write .`
-- Lint code: `npx eslint .`
+### Available Scripts
+
+- **`npm start`** - Start the production server
+- **`npm run dev`** - Start the development server with hot reload
+- **`npm test`** - Run all tests
+- **`npm run test:watch`** - Run tests in watch mode
+- **`npm run test:coverage`** - Generate test coverage report
+- **`npm run format`** - Format all code with Prettier
+- **`npm run format:check`** - Check code formatting without modifying files
 
 ## CI/CD
 

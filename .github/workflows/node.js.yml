@@ -29,13 +29,11 @@ jobs:
           npm ci
 
       - name: Check code formatting
-        continue-on-error: true
         run: |
           npx prettier --check . || (echo 'Code formatting issues found. Run "npx prettier --write ." to fix them.' && exit 1)
 
       - name: Run tests
         if: success()
-        continue-on-error: true
         run: |
           if grep -q '"test":' package.json && ! grep -q '"test": "echo \\"Error: no test specified\\"' package.json; then
             npm test

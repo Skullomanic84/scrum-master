@@ -1,2 +1,7 @@
 node_modules
 env
+coverage
+*.log
+.env
+package-lock.json
+.github/workflows

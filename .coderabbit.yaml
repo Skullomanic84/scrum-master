@@ -1,0 +1,103 @@
+version: 2
+
+# Review settings
+review:
+  # Enable/disable the review functionality
+  enabled: true
+  
+  # Automatically post review comments
+  auto_review:
+    enabled: true
+    # Only comment on changed lines
+    filter: diff
+
+  # Enable summary comments
+  summary:
+    enabled: true
+    # Include diff summary
+    diff: true
+    # Include security analysis
+    security: true
+    # Include performance analysis
+    performance: true
+
+  # Comment settings
+  comments:
+    # Show suggestions for improvements
+    suggestions: true
+    # Show questions about the code
+    questions: true
+    # Show praise for good practices
+    praise: true
+
+# Update settings
+update:
+  enabled: true
+  # Automatically update dependencies
+  dependencies:
+    enabled: true
+    # Update patch versions
+    patch: true
+    # Update minor versions
+    minor: true
+    # Update major versions (disabled by default as it might be breaking)
+    major: false
+
+# Ignore specific files or directories
+ignore:
+  - "**/node_modules/**"
+  - "**/*.test.js"
+  - "**/*.spec.js"
+  - "**/__tests__/**"
+  - "**/coverage/**"
+  - "**/.github/**"
+  - "**/.gitignore"
+  - "**/.env*"
+  - "**/package-lock.json"
+  - "**/yarn.lock"
+
+# Custom rules
+rules:
+  # Security rules
+  security:
+    enabled: true
+    # Check for potential security vulnerabilities
+    vulnerabilities: true
+    # Check for hardcoded secrets
+    secrets: true
+    
+  # Code quality rules
+  quality:
+    enabled: true
+    # Check for code complexity
+    complexity: true
+    # Check for code duplication
+    duplication: true
+    # Check for potential bugs
+    bugs: true
+
+  # Style rules
+  style:
+    enabled: true
+    # Enforce consistent code style
+    consistency: true
+    # Check for best practices
+    best_practices: true
+
+# Notification settings
+notifications:
+  # Comment on pull requests
+  pull_request_comment: true
+  # Update PR status checks
+  status_check: true
+  # Add labels to PRs
+  labels: true
+
+# Branch protection
+branch_protection:
+  # Require CodeRabbit's review for merging
+  require_review: true
+  # Number of approvals required (including CodeRabbit's)
+  required_approvals: 1
+  # Dismiss stale reviews when new commits are pushed
+  dismiss_stale_reviews: true

@@ -19,17 +19,20 @@ A project management application built with Node.js, Express, and MongoDB, follo
 ## Getting Started
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/scrum-master.git
    cd scrum-master
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Create a `.env` file in the root directory and add your environment variables:
+
    ```env
    PORT=3000
    MONGODB_URI=your_mongodb_connection_string
@@ -51,6 +54,7 @@ A project management application built with Node.js, Express, and MongoDB, follo
 ## CI/CD
 
 This project uses GitHub Actions for CI/CD. The workflow includes:
+
 - Linting
 - Testing
 - Build verification

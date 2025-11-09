@@ -2,9 +2,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ['master']
   pull_request:
-    branches: [ "master" ]
+    branches: ['master']
 
 jobs:
   build:
@@ -15,39 +15,39 @@ jobs:
         node-version: [18.x]
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    
-    - name: Setup Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    
-    - name: Install dependencies
-      run: |
-        npm ci
-        
-    - name: Check code formatting
-      continue-on-error: true
-      run: |
-        npx prettier --check . || (echo 'Code formatting issues found. Run "npx prettier --write ." to fix them.' && exit 1)
-      
-    - name: Run tests
-      if: success()
-      continue-on-error: true
-      run: |
-        if grep -q '"test":' package.json && ! grep -q '"test": "echo \\"Error: no test specified\\"' package.json; then
-          npm test
-        else
-          echo 'No test script configured, skipping tests.'
-        fi
-    
-    - name: Build
-      if: success()
-      run: |
-        if [ -f package.json ] && grep -q '"build":' package.json; then
-          npm run build
-        else
-          echo 'No build script found in package.json, skipping build step.'
-        fi
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      - name: Check code formatting
+        continue-on-error: true
+        run: |
+          npx prettier --check . || (echo 'Code formatting issues found. Run "npx prettier --write ." to fix them.' && exit 1)
+
+      - name: Run tests
+        if: success()
+        continue-on-error: true
+        run: |
+          if grep -q '"test":' package.json && ! grep -q '"test": "echo \\"Error: no test specified\\"' package.json; then
+            npm test
+          else
+            echo 'No test script configured, skipping tests.'
+          fi
+
+      - name: Build
+        if: success()
+        run: |
+          if [ -f package.json ] && grep -q '"build":' package.json; then
+            npm run build
+          else
+            echo 'No build script found in package.json, skipping build step.'
+          fi

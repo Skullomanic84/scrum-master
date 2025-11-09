@@ -4,7 +4,7 @@ version: 2
 review:
   # Enable/disable the review functionality
   enabled: true
-  
+
   # Automatically post review comments
   auto_review:
     enabled: true
@@ -45,16 +45,16 @@ update:
 
 # Ignore specific files or directories
 ignore:
-  - "**/node_modules/**"
-  - "**/*.test.js"
-  - "**/*.spec.js"
-  - "**/__tests__/**"
-  - "**/coverage/**"
-  - "**/.github/**"
-  - "**/.gitignore"
-  - "**/.env*"
-  - "**/package-lock.json"
-  - "**/yarn.lock"
+  - '**/node_modules/**'
+  - '**/*.test.js'
+  - '**/*.spec.js'
+  - '**/__tests__/**'
+  - '**/coverage/**'
+  - '**/.github/**'
+  - '**/.gitignore'
+  - '**/.env*'
+  - '**/package-lock.json'
+  - '**/yarn.lock'
 
 # Custom rules
 rules:
@@ -65,7 +65,7 @@ rules:
     vulnerabilities: true
     # Check for hardcoded secrets
     secrets: true
-    
+
   # Code quality rules
   quality:
     enabled: true

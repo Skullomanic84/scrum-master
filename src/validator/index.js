@@ -57,21 +57,26 @@ const userChangeCurrentPasswordValidator = () => {
 
 const userForgotPasswordValidator = () => {
   return [
-    body('email').notEmpty().withMessage('Email is required') .isEmail().withMessage('Email is invalid'),
+    body('email')
+      .notEmpty()
+      .withMessage('Email is required')
+      .isEmail()
+      .withMessage('Email is invalid'),
   ];
 };
 
 const userResetForgotPasswordValidator = () => {
   return [
     body('newPassword').notEmpty().withMessage('Password is required'),
-    body('confirmPassword').notEmpty().withMessage('Confirm password is required'),
+    body('confirmPassword')
+      .notEmpty()
+      .withMessage('Confirm password is required'),
   ];
 };
 
-
-export { 
-  userRegisterValidator, 
-  userLoginValidator, 
-  userChangeCurrentPasswordValidator, 
-  userForgotPasswordValidator 
+export {
+  userRegisterValidator,
+  userLoginValidator,
+  userChangeCurrentPasswordValidator,
+  userForgotPasswordValidator,
 };
